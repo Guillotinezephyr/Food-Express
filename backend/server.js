@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoute.js"
 import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
+// import recommendationRoutes from './routes/recommendationRoutes.js';
 // import userModel from "./models/userModel.js"
 
 
@@ -26,7 +27,7 @@ app.use("/images",express.static('uploads'))
 app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
-
+// app.use('/api/recommend', recommendationRoutes);
 
 
 app.get("/",(req,res)=>{
@@ -40,5 +41,5 @@ app.listen(port,()=>{
 
 
 
-// YOU CAN SAVE UR DATABASE IN THIS COMMENT IF U WANT --> 
+// YOU CAN SAVE UR DATABASE IN THIS COMMENT IF U WANT -->
 

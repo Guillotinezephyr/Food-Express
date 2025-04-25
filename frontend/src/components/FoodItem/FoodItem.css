@@ -100,3 +100,68 @@
 .lightcolors .food-item-img-container .add{
     background-color: white;
 }
+
+.suggestion-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.suggested-food-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.suggested-food {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.suggested-food-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.suggested-food-info {
+  text-align: left;
+}
+
+.suggested-food-name {
+  font-weight: bold;
+}
+
+.suggested-food-price {
+  color: #555;
+}
+
+.close-popup {
+  padding: 5px 10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  background: #d32f2f;
+}

@@ -3,11 +3,13 @@ import './MyOrders.css'
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
 import { assets } from '../../assets/assets';
+import { useNavigate } from 'react-router-dom';
 
 const MyOrders = () => {
 
     const {url,token} = useContext(StoreContext);
     const [data,setData] = useState([]);
+    const navigate = useNavigate();
 
     const fetchOrders = async () => {
         const response = await axios.post(url+"/api/order/userorders",{},{headers:{token}});
@@ -19,6 +21,10 @@ const MyOrders = () => {
             fetchOrders();
         }
     },[token])
+
+    const handleTrackOrder = () => {
+  navigate('/order-tracking');
+};
 
   return (
     <div className='my-orders'>
@@ -39,7 +45,7 @@ const MyOrders = () => {
                         <p>₹{order.amount}.00</p>
                         <p>Items: {order.items.length}</p>
                         <p><span>&#x25cf;</span> <b>{order.status}</b></p>
-                        <button onClick={fetchOrders}>Track Order</button>
+                        <button onClick={handleTrackOrder}>Track Order</button>
                     </div>
                 )
             })}
